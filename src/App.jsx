@@ -4,6 +4,8 @@ import { ReactComponent as FavoriteIcon } from '../src/assets/icons/favorite.svg
 import { ReactComponent as ProfileIcon } from '../src/assets/icons/profile.svg'
 import { ReactComponent as PlusIcon } from '../src/assets/icons/plus.svg'
 import { ReactComponent as TickIcon } from '../src/assets/icons/tick.svg'
+import { ReactComponent as HeartActiveIcon } from '../src/assets/icons/heart-active.svg'
+import { ReactComponent as HeartInactiveIcon } from '../src/assets/icons/heart-inactive.svg'
 import { ReactComponent as SearchIcon } from '../src/assets/icons/search.svg'
 import sneakers1 from './assets/imgs/sneakers-1.jpg'
 import sneakers2 from './assets/imgs/sneakers-2.jpg'
@@ -52,6 +54,9 @@ function App() {
         </div>
         <div className="products d-flex flex-wrap justify-center">
           <article className="card p-20">
+            <button className="button card__favorite-btn">
+              <HeartActiveIcon className="button__icon" width={32} height={32} />
+            </button>
             <img width={113} height={112} src={sneakers1} alt="Product" />
             <h3 className="card__title">Мужские Кроссовки Nike Blazer Mid Suede</h3>
             <footer className="d-flex justify-between align-center">
@@ -65,6 +70,9 @@ function App() {
             </footer>
           </article>
           <article className="card p-20">
+            <button className="button card__favorite-btn">
+              <HeartInactiveIcon className="button__icon" width={32} height={32} />
+            </button>
             <img width={113} height={112} src={sneakers2} alt="Product" />
             <h3 className="card__title">Мужские Кроссовки Nike Air Max 270</h3>
             <footer className="d-flex justify-between align-center">
@@ -78,6 +86,9 @@ function App() {
             </footer>
           </article>
           <article className="card p-20">
+            <button className="button card__favorite-btn">
+              <HeartActiveIcon className="button__icon" width={32} height={32} />
+            </button>
             <img width={113} height={112} src={sneakers3} alt="Product" />
             <h3 className="card__title">Мужские Кроссовки Nike Blazer Mid Suede</h3>
             <footer className="d-flex justify-between align-center">
@@ -91,6 +102,9 @@ function App() {
             </footer>
           </article>
           <article className="card p-20">
+            <button className="button card__favorite-btn">
+              <HeartActiveIcon className="button__icon" width={32} height={32} />
+            </button>
             <img width={113} height={112} src={sneakers4} alt="Product" />
             <h3 className="card__title">Кроссовки Puma X Aka Boku Future Rider</h3>
             <footer className="d-flex justify-between align-center">
@@ -104,6 +118,9 @@ function App() {
             </footer>
           </article>
           <article className="card p-20">
+            <button className="button card__favorite-btn">
+              <HeartActiveIcon className="button__icon" width={32} height={32} />
+            </button>
             <img width={113} height={112} src={sneakers5} alt="Product" />
             <h3 className="card__title">Мужские Кроссовки Under Armour Curry 8</h3>
             <footer className="d-flex justify-between align-center">
@@ -117,6 +134,9 @@ function App() {
             </footer>
           </article>
           <article className="card p-20">
+            <button className="button card__favorite-btn">
+              <HeartActiveIcon className="button__icon" width={32} height={32} />
+            </button>
             <img width={113} height={112} src={sneakers6} alt="Product" />
             <h3 className="card__title">Мужские Кроссовки Nike Kyrie 7</h3>
             <footer className="d-flex justify-between align-center">
@@ -130,6 +150,9 @@ function App() {
             </footer>
           </article>
           <article className="card p-20">
+            <button className="button card__favorite-btn">
+              <HeartActiveIcon className="button__icon" width={32} height={32} />
+            </button>
             <img width={113} height={112} src={sneakers7} alt="Product" />
             <h3 className="card__title">Мужские Кроссовки Jordan Air Jordan 11</h3>
             <footer className="d-flex justify-between align-center">
@@ -143,6 +166,9 @@ function App() {
             </footer>
           </article>
           <article className="card p-20">
+            <button className="button card__favorite-btn">
+              <HeartActiveIcon className="button__icon" width={32} height={32} />
+            </button>
             <img width={113} height={112} src={sneakers8} alt="Product" />
             <h3 className="card__title">Мужские Кроссовки Nike LeBron XVIII</h3>
             <footer className="d-flex justify-between align-center">
@@ -156,6 +182,9 @@ function App() {
             </footer>
           </article>
           <article className="card p-20">
+            <button className="button card__favorite-btn">
+              <HeartActiveIcon className="button__icon" width={32} height={32} />
+            </button>
             <img width={113} height={112} src={sneakers9} alt="Product" />
             <h3 className="card__title">Мужские Кроссовки Nike Lebron XVIII Low</h3>
             <footer className="d-flex justify-between align-center">
@@ -169,6 +198,9 @@ function App() {
             </footer>
           </article>
           <article className="card p-20">
+            <button className="button card__favorite-btn">
+              <HeartActiveIcon className="button__icon" width={32} height={32} />
+            </button>
             <img width={113} height={112} src={sneakers1} alt="Product" />
             <h3 className="card__title">Мужские Кроссовки Nike Blazer Mid Suede</h3>
             <footer className="d-flex justify-between align-center">
@@ -182,6 +214,9 @@ function App() {
             </footer>
           </article>
           <article className="card p-20">
+            <button className="button card__favorite-btn">
+              <HeartActiveIcon className="button__icon" width={32} height={32} />
+            </button>
             <img width={113} height={112} src={sneakers4} alt="Product" />
             <h3 className="card__title">Кроссовки Puma X Aka Boku Future Rider</h3>
             <footer className="d-flex justify-between align-center">
@@ -195,6 +230,9 @@ function App() {
             </footer>
           </article>
           <article className="card p-20">
+            <button className="button card__favorite-btn">
+              <HeartActiveIcon className="button__icon" width={32} height={32} />
+            </button>
             <img width={113} height={112} src={sneakers10} alt="Product" />
             <h3 className="card__title">Мужские Кроссовки Nike Kyrie Flytrap IV</h3>
             <footer className="d-flex justify-between align-center">
