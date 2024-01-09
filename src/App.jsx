@@ -3,6 +3,7 @@ import { ReactComponent as CartIcon } from '../src/assets/icons/cart.svg'
 import { ReactComponent as FavoriteIcon } from '../src/assets/icons/favorite.svg'
 import { ReactComponent as ProfileIcon } from '../src/assets/icons/profile.svg'
 import { ReactComponent as PlusIcon } from '../src/assets/icons/plus.svg'
+import { ReactComponent as SearchIcon } from '../src/assets/icons/search.svg'
 import sneakers1 from './assets/imgs/sneakers-1.jpg'
 import sneakers2 from './assets/imgs/sneakers-2.jpg'
 import sneakers3 from './assets/imgs/sneakers-3.jpg'
@@ -41,7 +42,13 @@ function App() {
         </ul>
       </header>
       <main className="content p-40">
-        <h1 className="mb-40">Все кроссовки</h1>
+        <div className="d-flex justify-between align-center mb-40">
+          <h1>Все кроссовки</h1>
+          <div className="search d-flex">
+            <SearchIcon className="search__icon" width={15} height={16} />
+            <input className="search__input" type="search" placeholder="Поиск..." />
+          </div>
+        </div>
         <div className="products d-flex flex-wrap justify-center">
           <article className="card p-20">
             <img width={113} height={112} src={sneakers1} alt="Product" />
