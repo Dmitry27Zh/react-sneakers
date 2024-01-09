@@ -3,6 +3,7 @@ import { ReactComponent as CartIcon } from '../src/assets/icons/cart.svg'
 import { ReactComponent as FavoriteIcon } from '../src/assets/icons/favorite.svg'
 import { ReactComponent as ProfileIcon } from '../src/assets/icons/profile.svg'
 import { ReactComponent as PlusIcon } from '../src/assets/icons/plus.svg'
+import { ReactComponent as TickIcon } from '../src/assets/icons/tick.svg'
 import { ReactComponent as SearchIcon } from '../src/assets/icons/search.svg'
 import sneakers1 from './assets/imgs/sneakers-1.jpg'
 import sneakers2 from './assets/imgs/sneakers-2.jpg'
@@ -58,8 +59,8 @@ function App() {
                 <span>Цена:</span>
                 <b>12 999 руб.</b>
               </div>
-              <button>
-                <PlusIcon width={12} height={12} />
+              <button className="button">
+                <PlusIcon className="button__icon" width={32} height={32} />
               </button>
             </footer>
           </article>
@@ -71,8 +72,8 @@ function App() {
                 <span>Цена:</span>
                 <b>12 999 руб.</b>
               </div>
-              <button>
-                <PlusIcon width={12} height={12} />
+              <button className="button">
+                <TickIcon className="button__icon" width={32} height={32} />
               </button>
             </footer>
           </article>
@@ -84,8 +85,8 @@ function App() {
                 <span>Цена:</span>
                 <b>8 499 руб.</b>
               </div>
-              <button>
-                <PlusIcon width={12} height={12} />
+              <button className="button">
+                <PlusIcon className="button__icon" width={32} height={32} />
               </button>
             </footer>
           </article>
@@ -97,8 +98,8 @@ function App() {
                 <span>Цена:</span>
                 <b>8 999 руб.</b>
               </div>
-              <button>
-                <PlusIcon width={12} height={12} />
+              <button className="button">
+                <PlusIcon className="button__icon" width={32} height={32} />
               </button>
             </footer>
           </article>
@@ -110,8 +111,8 @@ function App() {
                 <span>Цена:</span>
                 <b>15 199 руб.</b>
               </div>
-              <button>
-                <PlusIcon width={12} height={12} />
+              <button className="button">
+                <PlusIcon className="button__icon" width={32} height={32} />
               </button>
             </footer>
           </article>
@@ -123,8 +124,8 @@ function App() {
                 <span>Цена:</span>
                 <b>11 299 руб.</b>
               </div>
-              <button>
-                <PlusIcon width={12} height={12} />
+              <button className="button">
+                <PlusIcon className="button__icon" width={32} height={32} />
               </button>
             </footer>
           </article>
@@ -136,8 +137,8 @@ function App() {
                 <span>Цена:</span>
                 <b>10 799 руб.</b>
               </div>
-              <button>
-                <PlusIcon width={12} height={12} />
+              <button className="button">
+                <PlusIcon className="button__icon" width={32} height={32} />
               </button>
             </footer>
           </article>
@@ -149,8 +150,8 @@ function App() {
                 <span>Цена:</span>
                 <b>16 499 руб.</b>
               </div>
-              <button>
-                <PlusIcon width={12} height={12} />
+              <button className="button">
+                <PlusIcon className="button__icon" width={32} height={32} />
               </button>
             </footer>
           </article>
@@ -162,8 +163,8 @@ function App() {
                 <span>Цена:</span>
                 <b>13 999 руб.</b>
               </div>
-              <button>
-                <PlusIcon width={12} height={12} />
+              <button className="button">
+                <PlusIcon className="button__icon" width={32} height={32} />
               </button>
             </footer>
           </article>
@@ -175,8 +176,8 @@ function App() {
                 <span>Цена:</span>
                 <b>12 999 руб.</b>
               </div>
-              <button>
-                <PlusIcon width={12} height={12} />
+              <button className="button">
+                <PlusIcon className="button__icon" width={32} height={32} />
               </button>
             </footer>
           </article>
@@ -188,8 +189,8 @@ function App() {
                 <span>Цена:</span>
                 <b>8 999 руб.</b>
               </div>
-              <button>
-                <PlusIcon width={12} height={12} />
+              <button className="button">
+                <PlusIcon className="button__icon" width={32} height={32} />
               </button>
             </footer>
           </article>
@@ -201,8 +202,8 @@ function App() {
                 <span>Цена:</span>
                 <b>11 299 руб.</b>
               </div>
-              <button>
-                <PlusIcon width={12} height={12} />
+              <button className="button">
+                <PlusIcon className="button__icon" width={32} height={32} />
               </button>
             </footer>
           </article>
