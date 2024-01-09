@@ -171,6 +171,10 @@ input {
   &__title {
     gap: 30px;
   }
+
+  &__title-btn {
+    flex-shrink: 0;
+  }
 }
 
 .cart {

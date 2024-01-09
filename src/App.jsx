@@ -28,7 +28,7 @@ function App() {
         <div className="drawer__content d-flex flex-column">
           <div className="drawer__title d-flex justify-between align-center mb-30">
             <h2>Корзина</h2>
-            <button className="cart-item__btn button card__favorite-btn" aria-label="Remove">
+            <button className="drawer__title-btn button" aria-label="Remove">
               <DeleteIcon className="button__icon" width={32} height={32} aria-hidden={true} />
             </button>
           </div>
@@ -40,7 +40,7 @@ function App() {
                 <p className="mb-5">Мужские Кроссовки Nike Air Max 270</p>
                 <b>12 999 руб.</b>
               </div>
-              <button className="cart-item__btn button card__favorite-btn" aria-label="Remove">
+              <button className="button" aria-label="Remove">
                 <DeleteIcon className="button__icon" width={32} height={32} aria-hidden={true} />
               </button>
             </article>
@@ -50,7 +50,7 @@ function App() {
                 <p className="mb-5">Мужские Кроссовки Nike Air Max 270</p>
                 <b>8 499 руб.</b>
               </div>
-              <button className="cart-item__btn button card__favorite-btn" aria-label="Remove">
+              <button className="button" aria-label="Remove">
                 <DeleteIcon className="button__icon" width={32} height={32} aria-hidden={true} />
               </button>
             </article>
