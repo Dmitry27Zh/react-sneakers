@@ -54,8 +54,8 @@ function App() {
         </div>
         <div className="products d-flex flex-wrap justify-center">
           <article className="card p-20">
-            <button className="button card__favorite-btn">
-              <HeartActiveIcon className="button__icon" width={32} height={32} />
+            <button className="button card__favorite-btn" aria-label="To favorite">
+              <HeartActiveIcon className="button__icon" width={32} height={32} aria-hidden={true} />
             </button>
             <img width={113} height={112} src={sneakers1} alt="Product" />
             <h3 className="card__title">Мужские Кроссовки Nike Blazer Mid Suede</h3>
@@ -64,14 +64,14 @@ function App() {
                 <span>Цена:</span>
                 <b>12 999 руб.</b>
               </div>
-              <button className="button">
-                <PlusIcon className="button__icon" width={32} height={32} />
+              <button className="button" aria-label="Add">
+                <PlusIcon className="button__icon" width={32} height={32} aria-hidden={true} />
               </button>
             </footer>
           </article>
           <article className="card p-20">
-            <button className="button card__favorite-btn">
-              <HeartInactiveIcon className="button__icon" width={32} height={32} />
+            <button className="button card__favorite-btn" aria-label="Not favorite">
+              <HeartInactiveIcon className="button__icon" width={32} height={32} aria-hidden={true} />
             </button>
             <img width={113} height={112} src={sneakers2} alt="Product" />
             <h3 className="card__title">Мужские Кроссовки Nike Air Max 270</h3>
@@ -80,14 +80,14 @@ function App() {
                 <span>Цена:</span>
                 <b>12 999 руб.</b>
               </div>
-              <button className="button">
+              <button className="button" aria-label="Remove">
                 <TickIcon className="button__icon" width={32} height={32} />
               </button>
             </footer>
           </article>
           <article className="card p-20">
-            <button className="button card__favorite-btn">
-              <HeartActiveIcon className="button__icon" width={32} height={32} />
+            <button className="button card__favorite-btn" aria-label="To favorite">
+              <HeartActiveIcon className="button__icon" width={32} height={32} aria-hidden={true} />
             </button>
             <img width={113} height={112} src={sneakers3} alt="Product" />
             <h3 className="card__title">Мужские Кроссовки Nike Blazer Mid Suede</h3>
@@ -96,14 +96,14 @@ function App() {
                 <span>Цена:</span>
                 <b>8 499 руб.</b>
               </div>
-              <button className="button">
-                <PlusIcon className="button__icon" width={32} height={32} />
+              <button className="button" aria-label="Add">
+                <PlusIcon className="button__icon" width={32} height={32} aria-hidden={true} />
               </button>
             </footer>
           </article>
           <article className="card p-20">
-            <button className="button card__favorite-btn">
-              <HeartActiveIcon className="button__icon" width={32} height={32} />
+            <button className="button card__favorite-btn" aria-label="To favorite">
+              <HeartActiveIcon className="button__icon" width={32} height={32} aria-hidden={true} />
             </button>
             <img width={113} height={112} src={sneakers4} alt="Product" />
             <h3 className="card__title">Кроссовки Puma X Aka Boku Future Rider</h3>
@@ -112,14 +112,14 @@ function App() {
                 <span>Цена:</span>
                 <b>8 999 руб.</b>
               </div>
-              <button className="button">
-                <PlusIcon className="button__icon" width={32} height={32} />
+              <button className="button" aria-label="Add">
+                <PlusIcon className="button__icon" width={32} height={32} aria-hidden={true} />
               </button>
             </footer>
           </article>
           <article className="card p-20">
-            <button className="button card__favorite-btn">
-              <HeartActiveIcon className="button__icon" width={32} height={32} />
+            <button className="button card__favorite-btn" aria-label="To favorite">
+              <HeartActiveIcon className="button__icon" width={32} height={32} aria-hidden={true} />
             </button>
             <img width={113} height={112} src={sneakers5} alt="Product" />
             <h3 className="card__title">Мужские Кроссовки Under Armour Curry 8</h3>
@@ -128,14 +128,14 @@ function App() {
                 <span>Цена:</span>
                 <b>15 199 руб.</b>
               </div>
-              <button className="button">
-                <PlusIcon className="button__icon" width={32} height={32} />
+              <button className="button" aria-label="Add">
+                <PlusIcon className="button__icon" width={32} height={32} aria-hidden={true} />
               </button>
             </footer>
           </article>
           <article className="card p-20">
-            <button className="button card__favorite-btn">
-              <HeartActiveIcon className="button__icon" width={32} height={32} />
+            <button className="button card__favorite-btn" aria-label="To favorite">
+              <HeartActiveIcon className="button__icon" width={32} height={32} aria-hidden={true} />
             </button>
             <img width={113} height={112} src={sneakers6} alt="Product" />
             <h3 className="card__title">Мужские Кроссовки Nike Kyrie 7</h3>
@@ -144,14 +144,14 @@ function App() {
                 <span>Цена:</span>
                 <b>11 299 руб.</b>
               </div>
-              <button className="button">
-                <PlusIcon className="button__icon" width={32} height={32} />
+              <button className="button" aria-label="Add">
+                <PlusIcon className="button__icon" width={32} height={32} aria-hidden={true} />
               </button>
             </footer>
           </article>
           <article className="card p-20">
-            <button className="button card__favorite-btn">
-              <HeartActiveIcon className="button__icon" width={32} height={32} />
+            <button className="button card__favorite-btn" aria-label="To favorite">
+              <HeartActiveIcon className="button__icon" width={32} height={32} aria-hidden={true} />
             </button>
             <img width={113} height={112} src={sneakers7} alt="Product" />
             <h3 className="card__title">Мужские Кроссовки Jordan Air Jordan 11</h3>
@@ -160,14 +160,14 @@ function App() {
                 <span>Цена:</span>
                 <b>10 799 руб.</b>
               </div>
-              <button className="button">
-                <PlusIcon className="button__icon" width={32} height={32} />
+              <button className="button" aria-label="Add">
+                <PlusIcon className="button__icon" width={32} height={32} aria-hidden={true} />
               </button>
             </footer>
           </article>
           <article className="card p-20">
-            <button className="button card__favorite-btn">
-              <HeartActiveIcon className="button__icon" width={32} height={32} />
+            <button className="button card__favorite-btn" aria-label="To favorite">
+              <HeartActiveIcon className="button__icon" width={32} height={32} aria-hidden={true} />
             </button>
             <img width={113} height={112} src={sneakers8} alt="Product" />
             <h3 className="card__title">Мужские Кроссовки Nike LeBron XVIII</h3>
@@ -176,14 +176,14 @@ function App() {
                 <span>Цена:</span>
                 <b>16 499 руб.</b>
               </div>
-              <button className="button">
-                <PlusIcon className="button__icon" width={32} height={32} />
+              <button className="button" aria-label="Add">
+                <PlusIcon className="button__icon" width={32} height={32} aria-hidden={true} />
               </button>
             </footer>
           </article>
           <article className="card p-20">
-            <button className="button card__favorite-btn">
-              <HeartActiveIcon className="button__icon" width={32} height={32} />
+            <button className="button card__favorite-btn" aria-label="To favorite">
+              <HeartActiveIcon className="button__icon" width={32} height={32} aria-hidden={true} />
             </button>
             <img width={113} height={112} src={sneakers9} alt="Product" />
             <h3 className="card__title">Мужские Кроссовки Nike Lebron XVIII Low</h3>
@@ -192,14 +192,14 @@ function App() {
                 <span>Цена:</span>
                 <b>13 999 руб.</b>
               </div>
-              <button className="button">
-                <PlusIcon className="button__icon" width={32} height={32} />
+              <button className="button" aria-label="Add">
+                <PlusIcon className="button__icon" width={32} height={32} aria-hidden={true} />
               </button>
             </footer>
           </article>
           <article className="card p-20">
-            <button className="button card__favorite-btn">
-              <HeartActiveIcon className="button__icon" width={32} height={32} />
+            <button className="button card__favorite-btn" aria-label="To favorite">
+              <HeartActiveIcon className="button__icon" width={32} height={32} aria-hidden={true} />
             </button>
             <img width={113} height={112} src={sneakers1} alt="Product" />
             <h3 className="card__title">Мужские Кроссовки Nike Blazer Mid Suede</h3>
@@ -208,14 +208,14 @@ function App() {
                 <span>Цена:</span>
                 <b>12 999 руб.</b>
               </div>
-              <button className="button">
-                <PlusIcon className="button__icon" width={32} height={32} />
+              <button className="button" aria-label="Add">
+                <PlusIcon className="button__icon" width={32} height={32} aria-hidden={true} />
               </button>
             </footer>
           </article>
           <article className="card p-20">
-            <button className="button card__favorite-btn">
-              <HeartActiveIcon className="button__icon" width={32} height={32} />
+            <button className="button card__favorite-btn" aria-label="To favorite">
+              <HeartActiveIcon className="button__icon" width={32} height={32} aria-hidden={true} />
             </button>
             <img width={113} height={112} src={sneakers4} alt="Product" />
             <h3 className="card__title">Кроссовки Puma X Aka Boku Future Rider</h3>
@@ -224,14 +224,14 @@ function App() {
                 <span>Цена:</span>
                 <b>8 999 руб.</b>
               </div>
-              <button className="button">
-                <PlusIcon className="button__icon" width={32} height={32} />
+              <button className="button" aria-label="Add">
+                <PlusIcon className="button__icon" width={32} height={32} aria-hidden={true} />
               </button>
             </footer>
           </article>
           <article className="card p-20">
-            <button className="button card__favorite-btn">
-              <HeartActiveIcon className="button__icon" width={32} height={32} />
+            <button className="button card__favorite-btn" aria-label="To favorite">
+              <HeartActiveIcon className="button__icon" width={32} height={32} aria-hidden={true} />
             </button>
             <img width={113} height={112} src={sneakers10} alt="Product" />
             <h3 className="card__title">Мужские Кроссовки Nike Kyrie Flytrap IV</h3>
@@ -240,8 +240,8 @@ function App() {
                 <span>Цена:</span>
                 <b>11 299 руб.</b>
               </div>
-              <button className="button">
-                <PlusIcon className="button__icon" width={32} height={32} />
+              <button className="button" aria-label="Add">
+                <PlusIcon className="button__icon" width={32} height={32} aria-hidden={true} />
               </button>
             </footer>
           </article>
