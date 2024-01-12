@@ -1,5 +1,4 @@
 import { ReactComponent as SearchIcon } from '../src/assets/icons/search.svg'
-import { ReactComponent as DeleteIcon } from '../src/assets/icons/delete.svg'
 import sneakers1 from './assets/imgs/sneakers-1.jpg'
 import sneakers2 from './assets/imgs/sneakers-2.jpg'
 import sneakers3 from './assets/imgs/sneakers-3.jpg'
@@ -13,22 +12,14 @@ import sneakers10 from './assets/imgs/sneakers-10.jpg'
 import Card from './components/Card/Card'
 import Header from './components/Header/Header'
 import Cart from './components/Cart/Cart'
+import Drawer from './components/Drawer/Drawer'
 
 function App() {
   return (
     <div className="wrapper clear">
-      <div className="drawer">
-        <div className="drawer__overlay"></div>
-        <div className="drawer__content d-flex flex-column">
-          <div className="drawer__title d-flex justify-between align-center mb-30">
-            <h2>Корзина</h2>
-            <button className="drawer__title-btn button" aria-label="Remove">
-              <DeleteIcon className="button__icon" width={32} height={32} aria-hidden={true} />
-            </button>
-          </div>
-          <Cart />
-        </div>
-      </div>
+      <Drawer isShown={true}>
+        <Cart />
+      </Drawer>
       <Header />
       <main className="content p-40">
         <div className="d-flex justify-between align-center mb-40">
