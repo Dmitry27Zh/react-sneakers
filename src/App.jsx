@@ -1,7 +1,3 @@
-import logo from '../src/assets/icons/logo.png'
-import { ReactComponent as CartIcon } from '../src/assets/icons/cart.svg'
-import { ReactComponent as FavoriteIcon } from '../src/assets/icons/favorite.svg'
-import { ReactComponent as ProfileIcon } from '../src/assets/icons/profile.svg'
 import { ReactComponent as SearchIcon } from '../src/assets/icons/search.svg'
 import { ReactComponent as DeleteIcon } from '../src/assets/icons/delete.svg'
 import { ReactComponent as ArrowRightIcon } from '../src/assets/icons/arrow-right.svg'
@@ -16,6 +12,7 @@ import sneakers8 from './assets/imgs/sneakers-8.jpg'
 import sneakers9 from './assets/imgs/sneakers-9.jpg'
 import sneakers10 from './assets/imgs/sneakers-10.jpg'
 import Card from './components/Card/Card'
+import Header from './components/Header/Header'
 
 function App() {
   return (
@@ -70,29 +67,7 @@ function App() {
           </div>
         </div>
       </div>
-      <header className="header d-flex justify-between align-center p-40">
-        <a className="logo d-flex align-center" href="/">
-          <img className="logo__icon" width={40} height={40} src={logo} alt="Logo" />
-          <div className="logo__info">
-            <h3 className="text-uppercase">React Sneakers</h3>
-            <p className="opacity-5">Магазин лучших кроссовок</p>
-          </div>
-        </a>
-        <ul className="navigation d-flex flex-wrap justify-end">
-          <li className="navigation-item d-flex align-center">
-            <CartIcon className="navigation-item__icon" width={20} height={20} />
-            <span>1205 руб.</span>
-          </li>
-          <li className="navigation-item d-flex align-center">
-            <FavoriteIcon className="navigation-item__icon" width={19} height={17} />
-            <span>Закладки</span>
-          </li>
-          <li className="navigation-item d-flex align-center">
-            <ProfileIcon className="navigation-item__icon" width={18} height={18} />
-            <span>Профиль</span>
-          </li>
-        </ul>
-      </header>
+      <Header />
       <main className="content p-40">
         <div className="d-flex justify-between align-center mb-40">
           <h1>Все кроссовки</h1>
