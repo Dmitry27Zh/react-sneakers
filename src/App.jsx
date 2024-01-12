@@ -2,10 +2,6 @@ import logo from '../src/assets/icons/logo.png'
 import { ReactComponent as CartIcon } from '../src/assets/icons/cart.svg'
 import { ReactComponent as FavoriteIcon } from '../src/assets/icons/favorite.svg'
 import { ReactComponent as ProfileIcon } from '../src/assets/icons/profile.svg'
-import { ReactComponent as PlusIcon } from '../src/assets/icons/plus.svg'
-import { ReactComponent as TickIcon } from '../src/assets/icons/tick.svg'
-import { ReactComponent as HeartActiveIcon } from '../src/assets/icons/heart-active.svg'
-import { ReactComponent as HeartInactiveIcon } from '../src/assets/icons/heart-inactive.svg'
 import { ReactComponent as SearchIcon } from '../src/assets/icons/search.svg'
 import { ReactComponent as DeleteIcon } from '../src/assets/icons/delete.svg'
 import { ReactComponent as ArrowRightIcon } from '../src/assets/icons/arrow-right.svg'
@@ -19,11 +15,12 @@ import sneakers7 from './assets/imgs/sneakers-7.jpg'
 import sneakers8 from './assets/imgs/sneakers-8.jpg'
 import sneakers9 from './assets/imgs/sneakers-9.jpg'
 import sneakers10 from './assets/imgs/sneakers-10.jpg'
+import Card from './components/Card/Card'
 
 function App() {
   return (
     <div className="wrapper clear">
-      <div className="drawer">
+      <div className="drawer" style={{ display: 'none' }}>
         <div className="drawer__overlay"></div>
         <div className="drawer__content d-flex flex-column">
           <div className="drawer__title d-flex justify-between align-center mb-30">
@@ -40,7 +37,7 @@ function App() {
                 <p className="mb-5">Мужские Кроссовки Nike Air Max 270</p>
                 <b>12 999 руб.</b>
               </div>
-              <button className="button" aria-label="Remove">
+              <button className="cart-item__btn button" aria-label="Remove">
                 <DeleteIcon className="button__icon" width={32} height={32} aria-hidden={true} />
               </button>
             </article>
@@ -50,7 +47,7 @@ function App() {
                 <p className="mb-5">Мужские Кроссовки Nike Air Max 270</p>
                 <b>8 499 руб.</b>
               </div>
-              <button className="button" aria-label="Remove">
+              <button className="cart-item__btn button" aria-label="Remove">
                 <DeleteIcon className="button__icon" width={32} height={32} aria-hidden={true} />
               </button>
             </article>
@@ -105,198 +102,18 @@ function App() {
           </div>
         </div>
         <div className="products d-flex flex-wrap justify-center">
-          <article className="card p-20">
-            <button className="button card__favorite-btn" aria-label="To favorite">
-              <HeartActiveIcon className="button__icon" width={32} height={32} aria-hidden={true} />
-            </button>
-            <img width={113} height={112} src={sneakers1} alt="Product" />
-            <h3 className="card__title">Мужские Кроссовки Nike Blazer Mid Suede</h3>
-            <footer className="d-flex justify-between align-center">
-              <div className="card__price d-flex flex-column">
-                <span>Цена:</span>
-                <b>12 999 руб.</b>
-              </div>
-              <button className="button" aria-label="Add">
-                <PlusIcon className="button__icon" width={32} height={32} aria-hidden={true} />
-              </button>
-            </footer>
-          </article>
-          <article className="card p-20">
-            <button className="button card__favorite-btn" aria-label="Not favorite">
-              <HeartInactiveIcon className="button__icon" width={32} height={32} aria-hidden={true} />
-            </button>
-            <img width={113} height={112} src={sneakers2} alt="Product" />
-            <h3 className="card__title">Мужские Кроссовки Nike Air Max 270</h3>
-            <footer className="d-flex justify-between align-center">
-              <div className="card__price d-flex flex-column">
-                <span>Цена:</span>
-                <b>12 999 руб.</b>
-              </div>
-              <button className="button" aria-label="Remove">
-                <TickIcon className="button__icon" width={32} height={32} />
-              </button>
-            </footer>
-          </article>
-          <article className="card p-20">
-            <button className="button card__favorite-btn" aria-label="To favorite">
-              <HeartActiveIcon className="button__icon" width={32} height={32} aria-hidden={true} />
-            </button>
-            <img width={113} height={112} src={sneakers3} alt="Product" />
-            <h3 className="card__title">Мужские Кроссовки Nike Blazer Mid Suede</h3>
-            <footer className="d-flex justify-between align-center">
-              <div className="card__price d-flex flex-column">
-                <span>Цена:</span>
-                <b>8 499 руб.</b>
-              </div>
-              <button className="button" aria-label="Add">
-                <PlusIcon className="button__icon" width={32} height={32} aria-hidden={true} />
-              </button>
-            </footer>
-          </article>
-          <article className="card p-20">
-            <button className="button card__favorite-btn" aria-label="To favorite">
-              <HeartActiveIcon className="button__icon" width={32} height={32} aria-hidden={true} />
-            </button>
-            <img width={113} height={112} src={sneakers4} alt="Product" />
-            <h3 className="card__title">Кроссовки Puma X Aka Boku Future Rider</h3>
-            <footer className="d-flex justify-between align-center">
-              <div className="card__price d-flex flex-column">
-                <span>Цена:</span>
-                <b>8 999 руб.</b>
-              </div>
-              <button className="button" aria-label="Add">
-                <PlusIcon className="button__icon" width={32} height={32} aria-hidden={true} />
-              </button>
-            </footer>
-          </article>
-          <article className="card p-20">
-            <button className="button card__favorite-btn" aria-label="To favorite">
-              <HeartActiveIcon className="button__icon" width={32} height={32} aria-hidden={true} />
-            </button>
-            <img width={113} height={112} src={sneakers5} alt="Product" />
-            <h3 className="card__title">Мужские Кроссовки Under Armour Curry 8</h3>
-            <footer className="d-flex justify-between align-center">
-              <div className="card__price d-flex flex-column">
-                <span>Цена:</span>
-                <b>15 199 руб.</b>
-              </div>
-              <button className="button" aria-label="Add">
-                <PlusIcon className="button__icon" width={32} height={32} aria-hidden={true} />
-              </button>
-            </footer>
-          </article>
-          <article className="card p-20">
-            <button className="button card__favorite-btn" aria-label="To favorite">
-              <HeartActiveIcon className="button__icon" width={32} height={32} aria-hidden={true} />
-            </button>
-            <img width={113} height={112} src={sneakers6} alt="Product" />
-            <h3 className="card__title">Мужские Кроссовки Nike Kyrie 7</h3>
-            <footer className="d-flex justify-between align-center">
-              <div className="card__price d-flex flex-column">
-                <span>Цена:</span>
-                <b>11 299 руб.</b>
-              </div>
-              <button className="button" aria-label="Add">
-                <PlusIcon className="button__icon" width={32} height={32} aria-hidden={true} />
-              </button>
-            </footer>
-          </article>
-          <article className="card p-20">
-            <button className="button card__favorite-btn" aria-label="To favorite">
-              <HeartActiveIcon className="button__icon" width={32} height={32} aria-hidden={true} />
-            </button>
-            <img width={113} height={112} src={sneakers7} alt="Product" />
-            <h3 className="card__title">Мужские Кроссовки Jordan Air Jordan 11</h3>
-            <footer className="d-flex justify-between align-center">
-              <div className="card__price d-flex flex-column">
-                <span>Цена:</span>
-                <b>10 799 руб.</b>
-              </div>
-              <button className="button" aria-label="Add">
-                <PlusIcon className="button__icon" width={32} height={32} aria-hidden={true} />
-              </button>
-            </footer>
-          </article>
-          <article className="card p-20">
-            <button className="button card__favorite-btn" aria-label="To favorite">
-              <HeartActiveIcon className="button__icon" width={32} height={32} aria-hidden={true} />
-            </button>
-            <img width={113} height={112} src={sneakers8} alt="Product" />
-            <h3 className="card__title">Мужские Кроссовки Nike LeBron XVIII</h3>
-            <footer className="d-flex justify-between align-center">
-              <div className="card__price d-flex flex-column">
-                <span>Цена:</span>
-                <b>16 499 руб.</b>
-              </div>
-              <button className="button" aria-label="Add">
-                <PlusIcon className="button__icon" width={32} height={32} aria-hidden={true} />
-              </button>
-            </footer>
-          </article>
-          <article className="card p-20">
-            <button className="button card__favorite-btn" aria-label="To favorite">
-              <HeartActiveIcon className="button__icon" width={32} height={32} aria-hidden={true} />
-            </button>
-            <img width={113} height={112} src={sneakers9} alt="Product" />
-            <h3 className="card__title">Мужские Кроссовки Nike Lebron XVIII Low</h3>
-            <footer className="d-flex justify-between align-center">
-              <div className="card__price d-flex flex-column">
-                <span>Цена:</span>
-                <b>13 999 руб.</b>
-              </div>
-              <button className="button" aria-label="Add">
-                <PlusIcon className="button__icon" width={32} height={32} aria-hidden={true} />
-              </button>
-            </footer>
-          </article>
-          <article className="card p-20">
-            <button className="button card__favorite-btn" aria-label="To favorite">
-              <HeartActiveIcon className="button__icon" width={32} height={32} aria-hidden={true} />
-            </button>
-            <img width={113} height={112} src={sneakers1} alt="Product" />
-            <h3 className="card__title">Мужские Кроссовки Nike Blazer Mid Suede</h3>
-            <footer className="d-flex justify-between align-center">
-              <div className="card__price d-flex flex-column">
-                <span>Цена:</span>
-                <b>12 999 руб.</b>
-              </div>
-              <button className="button" aria-label="Add">
-                <PlusIcon className="button__icon" width={32} height={32} aria-hidden={true} />
-              </button>
-            </footer>
-          </article>
-          <article className="card p-20">
-            <button className="button card__favorite-btn" aria-label="To favorite">
-              <HeartActiveIcon className="button__icon" width={32} height={32} aria-hidden={true} />
-            </button>
-            <img width={113} height={112} src={sneakers4} alt="Product" />
-            <h3 className="card__title">Кроссовки Puma X Aka Boku Future Rider</h3>
-            <footer className="d-flex justify-between align-center">
-              <div className="card__price d-flex flex-column">
-                <span>Цена:</span>
-                <b>8 999 руб.</b>
-              </div>
-              <button className="button" aria-label="Add">
-                <PlusIcon className="button__icon" width={32} height={32} aria-hidden={true} />
-              </button>
-            </footer>
-          </article>
-          <article className="card p-20">
-            <button className="button card__favorite-btn" aria-label="To favorite">
-              <HeartActiveIcon className="button__icon" width={32} height={32} aria-hidden={true} />
-            </button>
-            <img width={113} height={112} src={sneakers10} alt="Product" />
-            <h3 className="card__title">Мужские Кроссовки Nike Kyrie Flytrap IV</h3>
-            <footer className="d-flex justify-between align-center">
-              <div className="card__price d-flex flex-column">
-                <span>Цена:</span>
-                <b>11 299 руб.</b>
-              </div>
-              <button className="button" aria-label="Add">
-                <PlusIcon className="button__icon" width={32} height={32} aria-hidden={true} />
-              </button>
-            </footer>
-          </article>
+          <Card imgSrc={sneakers1} isFavorite={false} isAdded={false} />
+          <Card imgSrc={sneakers2} isFavorite={true} isAdded={false} />
+          <Card imgSrc={sneakers3} isFavorite={false} isAdded={true} />
+          <Card imgSrc={sneakers4} isFavorite={false} isAdded={false} />
+          <Card imgSrc={sneakers5} isFavorite={false} isAdded={false} />
+          <Card imgSrc={sneakers6} isFavorite={false} isAdded={false} />
+          <Card imgSrc={sneakers7} isFavorite={false} isAdded={false} />
+          <Card imgSrc={sneakers8} isFavorite={false} isAdded={false} />
+          <Card imgSrc={sneakers9} isFavorite={false} isAdded={false} />
+          <Card imgSrc={sneakers1} isFavorite={false} isAdded={false} />
+          <Card imgSrc={sneakers4} isFavorite={false} isAdded={false} />
+          <Card imgSrc={sneakers10} isFavorite={false} isAdded={false} />
         </div>
       </main>
     </div>
