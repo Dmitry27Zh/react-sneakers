@@ -9,10 +9,10 @@ import sneakers7 from './assets/imgs/sneakers-7.jpg'
 import sneakers8 from './assets/imgs/sneakers-8.jpg'
 import sneakers9 from './assets/imgs/sneakers-9.jpg'
 import sneakers10 from './assets/imgs/sneakers-10.jpg'
-import Card from './components/Card/Card'
+import Card from './components/Card'
 import Header from './components/Header/Header'
-import Cart from './components/Cart/Cart'
-import Drawer from './components/Drawer/Drawer'
+import Cart from './components/Cart'
+import Drawer from './components/Drawer'
 
 const items = [
   { _id: crypto.randomUUID(), title: 'Мужские Кроссовки Nike Blazer Mid Suede', price: 12999, imgSrc: sneakers1 },
