@@ -71,6 +71,8 @@ input {
 .card {
   position: relative;
   flex: 1 0 210px;
+  max-width: calc((100% - (var(--gap) * 3)) / 4);
+  min-width: 190px;
   border: 1px solid #f8f8f8;
   border-radius: 40px;
   transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
@@ -119,7 +121,8 @@ input {
 }
 
 .products {
-  gap: 40px;
+  --gap: 40px;
+  gap: var(--gap);
 }
 
 .search {

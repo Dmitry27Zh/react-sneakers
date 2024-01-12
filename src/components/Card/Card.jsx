@@ -3,7 +3,7 @@ import { ReactComponent as TickIcon } from '../../assets/icons/tick.svg'
 import { ReactComponent as HeartActiveIcon } from '../../assets/icons/heart-active.svg'
 import { ReactComponent as HeartInactiveIcon } from '../../assets/icons/heart-inactive.svg'
 
-const Card = ({ imgSrc, isFavorite, isAdded }) => {
+const Card = ({ title, price, imgSrc, isFavorite, isAdded }) => {
   return (
     <article className="card p-20">
       {isFavorite ? (
@@ -16,11 +16,11 @@ const Card = ({ imgSrc, isFavorite, isAdded }) => {
         </button>
       )}
       <img width={113} height={112} src={imgSrc} alt="Product" />
-      <h3 className="card__title">Мужские Кроссовки Nike Blazer Mid Suede</h3>
+      <h3 className="card__title">{title}</h3>
       <footer className="d-flex justify-between align-center">
         <div className="card__price d-flex flex-column">
           <span>Цена:</span>
-          <b>12 999 руб.</b>
+          <b>{price}</b>
         </div>
         {isAdded ? (
           <button className="button" aria-label="Remove">

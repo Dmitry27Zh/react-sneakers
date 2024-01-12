@@ -14,10 +14,23 @@ import Header from './components/Header/Header'
 import Cart from './components/Cart/Cart'
 import Drawer from './components/Drawer/Drawer'
 
+const items = [
+  { _id: crypto.randomUUID(), title: 'Мужские Кроссовки Nike Blazer Mid Suede', price: 12999, imgSrc: sneakers1 },
+  { _id: crypto.randomUUID(), title: 'Мужские Кроссовки Nike Air Max 270', price: 12999, imgSrc: sneakers2 },
+  { _id: crypto.randomUUID(), title: 'Мужские Кроссовки Nike Blazer Mid Suede', price: 8499, imgSrc: sneakers3 },
+  { _id: crypto.randomUUID(), title: 'Кроссовки Puma X Aka Boku Future Rider', price: 8999, imgSrc: sneakers4 },
+  { _id: crypto.randomUUID(), title: 'Мужские Кроссовки Under Armour Curry 8', price: 15199, imgSrc: sneakers5 },
+  { _id: crypto.randomUUID(), title: 'Мужские Кроссовки Nike Kyrie 7', price: 11299, imgSrc: sneakers6 },
+  { _id: crypto.randomUUID(), title: 'Мужские Кроссовки Jordan Air Jordan 11', price: 10799, imgSrc: sneakers7 },
+  { _id: crypto.randomUUID(), title: 'Мужские Кроссовки Nike LeBron XVIII', price: 16499, imgSrc: sneakers8 },
+  { _id: crypto.randomUUID(), title: 'Мужские Кроссовки Nike Lebron XVIII Low', price: 13999, imgSrc: sneakers9 },
+  { _id: crypto.randomUUID(), title: 'Мужские Кроссовки Nike Kyrie Flytrap IV', price: 11299, imgSrc: sneakers10 },
+]
+
 function App() {
   return (
     <div className="wrapper clear">
-      <Drawer isShown={true}>
+      <Drawer isShown={false}>
         <Cart />
       </Drawer>
       <Header />
@@ -29,19 +42,10 @@ function App() {
             <input className="search__input" type="search" placeholder="Поиск..." />
           </div>
         </div>
-        <div className="products d-flex flex-wrap justify-center">
-          <Card imgSrc={sneakers1} isFavorite={false} isAdded={false} />
-          <Card imgSrc={sneakers2} isFavorite={true} isAdded={false} />
-          <Card imgSrc={sneakers3} isFavorite={false} isAdded={true} />
-          <Card imgSrc={sneakers4} isFavorite={false} isAdded={false} />
-          <Card imgSrc={sneakers5} isFavorite={false} isAdded={false} />
-          <Card imgSrc={sneakers6} isFavorite={false} isAdded={false} />
-          <Card imgSrc={sneakers7} isFavorite={false} isAdded={false} />
-          <Card imgSrc={sneakers8} isFavorite={false} isAdded={false} />
-          <Card imgSrc={sneakers9} isFavorite={false} isAdded={false} />
-          <Card imgSrc={sneakers1} isFavorite={false} isAdded={false} />
-          <Card imgSrc={sneakers4} isFavorite={false} isAdded={false} />
-          <Card imgSrc={sneakers10} isFavorite={false} isAdded={false} />
+        <div className="products d-flex flex-wrap">
+          {items.map((item) => (
+            <Card key={item._id} {...item} isFavorite={false} isAdded={false} />
+          ))}
         </div>
       </main>
     </div>
