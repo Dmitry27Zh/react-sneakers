@@ -3,6 +3,11 @@ import { ReactComponent as TickIcon } from '../../assets/icons/tick.svg'
 import { ReactComponent as HeartActiveIcon } from '../../assets/icons/heart-active.svg'
 import { ReactComponent as HeartInactiveIcon } from '../../assets/icons/heart-inactive.svg'
 
+const currency = new Intl.NumberFormat('ru-RU', {
+  style: 'currency',
+  currency: 'RUB',
+})
+
 const Card = ({ title, price, imgSrc, isFavorite, isAdded }) => {
   return (
     <article className="card p-20">
@@ -20,7 +25,7 @@ const Card = ({ title, price, imgSrc, isFavorite, isAdded }) => {
       <footer className="d-flex justify-between align-center">
         <div className="card__price d-flex flex-column">
           <span>Цена:</span>
-          <b>{price}</b>
+          <b>{currency.format(price)}</b>
         </div>
         {isAdded ? (
           <button className="button" aria-label="Remove">
