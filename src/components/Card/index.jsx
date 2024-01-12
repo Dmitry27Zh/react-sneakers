@@ -9,15 +9,15 @@ const currency = new Intl.NumberFormat('ru-RU', {
   currency: 'RUB',
 })
 
-const Card = ({ title, price, imgSrc, isFavorite, isAdded }) => {
+const Card = ({ title, price, imgSrc, isFavorite, isAdded, onCart, onFavorite }) => {
   return (
     <article className={`${styles.card} p-20`}>
       {isFavorite ? (
-        <button className={`button ${styles['card__favorite-btn']}`} aria-label="Not favorite">
+        <button className={`button ${styles['card__favorite-btn']}`} aria-label="Not favorite" onClick={onFavorite}>
           <HeartActiveIcon className="button__icon" width={32} height={32} aria-hidden={true} />
         </button>
       ) : (
-        <button className={`button ${styles['card__favorite-btn']}`} aria-label="To favorite">
+        <button className={`button ${styles['card__favorite-btn']}`} aria-label="To favorite" onClick={onFavorite}>
           <HeartInactiveIcon className="button__icon" width={32} height={32} aria-hidden={true} />
         </button>
       )}
@@ -29,11 +29,11 @@ const Card = ({ title, price, imgSrc, isFavorite, isAdded }) => {
           <b>{currency.format(price)}</b>
         </div>
         {isAdded ? (
-          <button className="button" aria-label="Remove">
+          <button className="button" aria-label="Remove" onClick={onCart}>
             <TickIcon className="button__icon" width={32} height={32} aria-hidden={true} />
           </button>
         ) : (
-          <button className="button" aria-label="Add">
+          <button className="button" aria-label="Add" onClick={onCart}>
             <PlusIcon className="button__icon" width={32} height={32} aria-hidden={true} />
           </button>
         )}

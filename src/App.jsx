@@ -44,7 +44,14 @@ function App() {
         </div>
         <div className="products d-flex flex-wrap">
           {items.map((item) => (
-            <Card key={item._id} {...item} isFavorite={false} isAdded={false} />
+            <Card
+              key={item._id}
+              {...item}
+              isFavorite={false}
+              isAdded={false}
+              onCart={() => console.log('Cart')}
+              onFavorite={() => console.log('Favorite')}
+            />
           ))}
         </div>
       </main>
