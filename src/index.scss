@@ -68,43 +68,7 @@ input {
   }
 }
 
-.card {
-  position: relative;
-  flex: 1 0 210px;
-  max-width: calc((100% - (var(--gap) * 3)) / 4);
-  min-width: 190px;
-  border: 1px solid #f8f8f8;
-  border-radius: 40px;
-  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
 
-  &:hover,
-  &:focus-within {
-    box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.06);
-    transform: translateY(-5px);
-  }
-
-  &__title {
-    font-weight: 400;
-    font-size: 14px;
-  }
-
-  &__price {
-    font-size: 13px;
-
-    span {
-      text-transform: uppercase;
-      opacity: 0.5;
-    }
-
-    b {
-      font-weight: 700;
-    }
-  }
-
-  &__favorite-btn {
-    position: absolute;
-  }
-}
 
 .button {
   all: unset;
