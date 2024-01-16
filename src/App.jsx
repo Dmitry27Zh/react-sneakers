@@ -28,6 +28,7 @@ function App() {
   }
   const searchValue = search.trim()
   const title = !!searchValue ? `Поиск по запросу: "${search.trim()}"` : 'Все кроссовки'
+  const itemsToRender = items.filter((item) => item.title.trim().toLowerCase().includes(searchValue.toLowerCase()))
 
   return (
     <div className="wrapper clear">
@@ -48,7 +49,7 @@ function App() {
           </div>
         </div>
         <div className="products d-flex flex-wrap">
-          {items.map((item) => {
+          {itemsToRender.map((item) => {
             const isAdded = cartItems.some((cartItem) => cartItem._id === item._id)
 
             return (
