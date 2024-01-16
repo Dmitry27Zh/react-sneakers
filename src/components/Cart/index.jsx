@@ -1,13 +1,11 @@
 import { ReactComponent as ArrowRightIcon } from '../../assets/icons/arrow-right.svg'
 import { ReactComponent as DeleteIcon } from '../../assets/icons/delete.svg'
-import sneakers1 from '../../assets/imgs/sneakers-1.jpg'
-import sneakers2 from '../../assets/imgs/sneakers-2.jpg'
 
 const Cart = () => {
   return (
     <div className="cart d-flex flex-column">
       <article className="cart-item d-flex align-center mb-20">
-        <img className="cart-item__img mr-20" width={70} height={70} src={sneakers1} alt="Sneakers" />
+        <img className="cart-item__img mr-20" width={70} height={70} src="/imgs/sneakers-1.jpg" alt="Sneakers" />
         <div className="cart-item__info mr-15">
           <p className="mb-5">Мужские Кроссовки Nike Air Max 270</p>
           <b>12 999 руб.</b>
@@ -17,7 +15,7 @@ const Cart = () => {
         </button>
       </article>
       <article className="cart-item d-flex align-center mb-20">
-        <img className="cart-item__img mr-20" width={70} height={70} src={sneakers2} alt="Sneakers" />
+        <img className="cart-item__img mr-20" width={70} height={70} src="/imgs/sneakers-1.jpg" alt="Sneakers" />
         <div className="cart-item__info mr-15">
           <p className="mb-5">Мужские Кроссовки Nike Air Max 270</p>
           <b>8 499 руб.</b>
