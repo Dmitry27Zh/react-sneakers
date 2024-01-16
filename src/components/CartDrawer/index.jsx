@@ -1,10 +1,10 @@
 import Cart from '../Cart'
 import Drawer from '../Drawer'
 
-const CartDrawer = ({ isCartOpen, onClose }) => {
+const CartDrawer = ({ items, isCartOpen, onClose, onItemRemove }) => {
   return (
     <Drawer isShown={isCartOpen} onClose={onClose}>
-      <Cart />
+      <Cart items={items} onItemRemove={onItemRemove} />
     </Drawer>
   )
 }

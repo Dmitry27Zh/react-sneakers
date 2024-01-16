@@ -9,7 +9,7 @@ const currency = new Intl.NumberFormat('ru-RU', {
   currency: 'RUB',
 })
 
-const Card = ({ title, price, imgSrc, isFavorite, isAdded, onCart, onFavorite }) => {
+const Card = ({ title, price, imgSrc, isFavorite, isAdded, onCartAdd, onCartRemove, onFavorite }) => {
   return (
     <article className={`${styles.card} p-20`}>
       {isFavorite ? (
@@ -29,11 +29,11 @@ const Card = ({ title, price, imgSrc, isFavorite, isAdded, onCart, onFavorite })
           <b>{currency.format(price)}</b>
         </div>
         {isAdded ? (
-          <button className="button" aria-label="Remove" onClick={onCart}>
+          <button className="button" aria-label="Remove" onClick={onCartRemove}>
             <TickIcon className="button__icon" width={32} height={32} aria-hidden={true} />
           </button>
         ) : (
-          <button className="button" aria-label="Add" onClick={onCart}>
+          <button className="button" aria-label="Add" onClick={onCartAdd}>
             <PlusIcon className="button__icon" width={32} height={32} aria-hidden={true} />
           </button>
         )}
