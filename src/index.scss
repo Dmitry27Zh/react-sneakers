@@ -20,7 +20,7 @@ a {
 
 button,
 input {
-  font-family: inherit;
+  font: inherit;
 }
 
 .wrapper {
@@ -50,25 +50,11 @@ input {
   }
 }
 
-.navigation {
-  gap: 10px 30px;
-}
-
-.navigation-item {
-  gap: 10px;
-
-  &__icon {
-    flex-shrink: 0;
-  }
-}
-
 .content {
   h1 {
     margin: 0;
   }
 }
-
-
 
 .button {
   all: unset;

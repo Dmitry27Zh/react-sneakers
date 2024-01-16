@@ -1,0 +1,14 @@
+.navigation {
+  gap: 10px 30px;
+}
+
+.navigation-item {
+  gap: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  &__icon {
+    flex-shrink: 0;
+  }
+}
