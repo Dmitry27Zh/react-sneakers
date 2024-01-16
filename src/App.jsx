@@ -8,6 +8,7 @@ function App() {
   const [items, setItems] = useState([])
   const [cartItems, setCartItems] = useState([])
   const [isCartOpen, setIsCartOpen] = useState(false)
+  const [search, setSearch] = useState('')
   useEffect(() => {
     fetch('https://65a61ad374cf4207b4ef4757.mockapi.io/items')
       .then((res) => res.json())
@@ -35,7 +36,13 @@ function App() {
           <h1>Все кроссовки</h1>
           <div className="search d-flex">
             <SearchIcon className="search__icon" width={15} height={16} />
-            <input className="search__input" type="search" placeholder="Поиск..." />
+            <input
+              className="search__input"
+              type="search"
+              placeholder="Поиск..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
           </div>
         </div>
         <div className="products d-flex flex-wrap">
