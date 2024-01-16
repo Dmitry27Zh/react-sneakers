@@ -26,6 +26,8 @@ function App() {
   const handleCartRemove = (item) => {
     setCartItems((prevState) => prevState.filter((currentItem) => currentItem._id !== item._id))
   }
+  const searchValue = search.trim()
+  const title = !!searchValue ? `Поиск по запросу: "${search.trim()}"` : 'Все кроссовки'
 
   return (
     <div className="wrapper clear">
@@ -33,7 +35,7 @@ function App() {
       <Header onCartOpen={handleCartOpen} />
       <main className="content p-40">
         <div className="d-flex justify-between align-center mb-40">
-          <h1>Все кроссовки</h1>
+          <h1>{title}</h1>
           <div className="search d-flex">
             <SearchIcon className="search__icon" width={15} height={16} />
             <input
