@@ -1,7 +1,7 @@
 import logo from '../../assets/icons/logo.png'
 import Navigation from '../Navigation'
 
-const Header = () => {
+const Header = ({ onCartOpen }) => {
   return (
     <header className="header d-flex justify-between align-center p-40">
       <a className="logo d-flex align-center" href="/">
@@ -11,7 +11,7 @@ const Header = () => {
           <p className="opacity-5">Магазин лучших кроссовок</p>
         </div>
       </a>
-      <Navigation />
+      <Navigation onCartOpen={onCartOpen} />
     </header>
   )
 }

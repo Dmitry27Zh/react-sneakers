@@ -1,9 +1,9 @@
 import Cart from '../Cart'
 import Drawer from '../Drawer'
 
-const CartDrawer = ({ isCartOpen }) => {
+const CartDrawer = ({ isCartOpen, onClose }) => {
   return (
-    <Drawer isShown={isCartOpen}>
+    <Drawer isShown={isCartOpen} onClose={onClose}>
       <Cart />
     </Drawer>
   )

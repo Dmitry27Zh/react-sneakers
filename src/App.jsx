@@ -12,6 +12,7 @@ import sneakers10 from './assets/imgs/sneakers-10.jpg'
 import Card from './components/Card'
 import Header from './components/Header'
 import CartDrawer from './components/CartDrawer'
+import { useState } from 'react'
 
 const items = [
   { _id: crypto.randomUUID(), title: 'Мужские Кроссовки Nike Blazer Mid Suede', price: 12999, imgSrc: sneakers1 },
@@ -27,10 +28,18 @@ const items = [
 ]
 
 function App() {
+  const [isCartOpen, setIsCartOpen] = useState(false)
+  const handleCartOpen = () => {
+    setIsCartOpen(true)
+  }
+  const handleCartClose = () => {
+    setIsCartOpen(false)
+  }
+
   return (
     <div className="wrapper clear">
-      <CartDrawer isCartOpen={true} />
-      <Header />
+      <CartDrawer isCartOpen={isCartOpen} onClose={handleCartClose} />
+      <Header onCartOpen={handleCartOpen} />
       <main className="content p-40">
         <div className="d-flex justify-between align-center mb-40">
           <h1>Все кроссовки</h1>
