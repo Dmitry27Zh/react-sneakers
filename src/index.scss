@@ -152,6 +152,22 @@ input {
     }
   }
 
+  &__empty {
+    margin: auto 0;
+
+    img {
+      margin: 0 0 20px 0;
+    }
+
+    h2 {
+      margin: 0 0 9px 0;
+    }
+
+    p {
+      margin: 0 0 40px 0;
+    }
+  }
+
   &__footer {
     margin-top: auto;
   }
@@ -217,5 +233,9 @@ input {
   &__icon {
     transform-origin: 0 50%;
     transition: transform 0.2s ease-in-out;
+
+    &--left {
+      transform-origin: 100% 50%;
+    }
   }
 }
