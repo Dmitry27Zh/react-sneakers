@@ -8,11 +8,13 @@ import CartDrawer from './components/CartDrawer'
 function App() {
   const [items, setItems] = useState([])
   const [cartItems, setCartItems] = useState([])
+  const [favoriteItems, setFavoriteItems] = useState([])
   const [isCartOpen, setIsCartOpen] = useState(false)
   const [search, setSearch] = useState('')
   useEffect(() => {
     axios.get('https://65a61ad374cf4207b4ef4757.mockapi.io/items').then((res) => setItems(res.data))
     axios.get('https://65a61ad374cf4207b4ef4757.mockapi.io/cart').then((res) => setCartItems(res.data))
+    axios.get('https://65a7e40e94c2c5762da7d713.mockapi.io/favorites').then((res) => setFavoriteItems(res.data))
   }, [])
   const handleCartOpen = () => {
     setIsCartOpen(true)
@@ -36,6 +38,25 @@ function App() {
       const cartItem = cartItems.find((currentItem) => currentItem._id === item._id)
       axios.delete(`https://65a61ad374cf4207b4ef4757.mockapi.io/cart/${cartItem.id}`).then(() => {
         setCartItems((prevState) => prevState.filter((currentItem) => currentItem._id !== item._id))
+      })
+    }
+  }
+  const handleFavoriteAdd = (item) => {
+    const isAdded = favoriteItems.some((favoriteItem) => favoriteItem._id === item._id)
+
+    if (!isAdded) {
+      axios
+        .post('https://65a7e40e94c2c5762da7d713.mockapi.io/favorites', item)
+        .then((res) => setFavoriteItems((prevState) => [...prevState, res.data]))
+    }
+  }
+  const handleFavoriteRemove = (item) => {
+    const isAdded = favoriteItems.some((favoriteItem) => favoriteItem._id === item._id)
+
+    if (isAdded) {
+      const favoriteItem = favoriteItems.find((favoriteItem) => favoriteItem._id === item._id)
+      axios.delete(`https://65a7e40e94c2c5762da7d713.mockapi.io/favorites/${favoriteItem.id}`).then(() => {
+        setFavoriteItems((prevState) => prevState.filter((currentItem) => currentItem._id !== item._id))
       })
     }
   }
@@ -63,17 +84,19 @@ function App() {
         </div>
         <div className="products d-flex flex-wrap">
           {itemsToRender.map((item) => {
-            const isAdded = cartItems.some((cartItem) => cartItem._id === item._id)
+            const isCart = cartItems.some((cartItem) => cartItem._id === item._id)
+            const isFavorite = favoriteItems?.some((favoriteItem) => favoriteItem._id === item._id)
 
             return (
               <Card
                 key={item._id}
                 {...item}
-                isFavorite={false}
-                isAdded={isAdded}
+                isFavorite={isFavorite}
+                isAdded={isCart}
                 onCartAdd={() => handleCartAdd(item)}
                 onCartRemove={() => handleCartRemove(item)}
-                onFavorite={() => console.log('Favorite')}
+                onFavoriteAdd={() => handleFavoriteAdd(item)}
+                onFavoriteRemove={() => handleFavoriteRemove(item)}
               />
             )
           })}

@@ -9,15 +9,29 @@ const currency = new Intl.NumberFormat('ru-RU', {
   currency: 'RUB',
 })
 
-const Card = ({ title, price, imgSrc, isFavorite, isAdded, onCartAdd, onCartRemove, onFavorite }) => {
+const Card = ({
+  title,
+  price,
+  imgSrc,
+  isFavorite,
+  isAdded,
+  onCartAdd,
+  onCartRemove,
+  onFavoriteAdd,
+  onFavoriteRemove,
+}) => {
   return (
     <article className={`${styles.card} p-20`}>
       {isFavorite ? (
-        <button className={`button ${styles['card__favorite-btn']}`} aria-label="Not favorite" onClick={onFavorite}>
+        <button
+          className={`button ${styles['card__favorite-btn']}`}
+          aria-label="Not favorite"
+          onClick={onFavoriteRemove}
+        >
           <HeartActiveIcon className="button__icon" width={32} height={32} aria-hidden={true} />
         </button>
       ) : (
-        <button className={`button ${styles['card__favorite-btn']}`} aria-label="To favorite" onClick={onFavorite}>
+        <button className={`button ${styles['card__favorite-btn']}`} aria-label="To favorite" onClick={onFavoriteAdd}>
           <HeartInactiveIcon className="button__icon" width={32} height={32} aria-hidden={true} />
         </button>
       )}
