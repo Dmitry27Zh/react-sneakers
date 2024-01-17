@@ -12,6 +12,7 @@ function App() {
   const [search, setSearch] = useState('')
   useEffect(() => {
     axios.get('https://65a61ad374cf4207b4ef4757.mockapi.io/items').then((res) => setItems(res.data))
+    axios.get('https://65a61ad374cf4207b4ef4757.mockapi.io/cart').then((res) => setCartItems(res.data))
   }, [])
   const handleCartOpen = () => {
     setIsCartOpen(true)
