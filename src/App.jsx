@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import { ReactComponent as SearchIcon } from '../src/assets/icons/search.svg'
-import Card from './components/Card'
 import Header from './components/Header'
 import CartDrawer from './components/CartDrawer'
+import Home from './pages/Home'
 
 function App() {
   const [items, setItems] = useState([])
@@ -69,38 +68,18 @@ function App() {
       <CartDrawer isCartOpen={isCartOpen} onClose={handleCartClose} items={cartItems} onItemRemove={handleCartRemove} />
       <Header onCartOpen={handleCartOpen} />
       <main className="content p-40">
-        <div className="d-flex justify-between align-center mb-40">
-          <h1>{title}</h1>
-          <div className="search d-flex">
-            <SearchIcon className="search__icon" width={15} height={16} />
-            <input
-              className="search__input"
-              type="search"
-              placeholder="Поиск..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            />
-          </div>
-        </div>
-        <div className="products d-flex flex-wrap">
-          {itemsToRender.map((item) => {
-            const isCart = cartItems.some((cartItem) => cartItem._id === item._id)
-            const isFavorite = favoriteItems?.some((favoriteItem) => favoriteItem._id === item._id)
-
-            return (
-              <Card
-                key={item._id}
-                {...item}
-                isFavorite={isFavorite}
-                isAdded={isCart}
-                onCartAdd={() => handleCartAdd(item)}
-                onCartRemove={() => handleCartRemove(item)}
-                onFavoriteAdd={() => handleFavoriteAdd(item)}
-                onFavoriteRemove={() => handleFavoriteRemove(item)}
-              />
-            )
-          })}
-        </div>
+        <Home
+          title={title}
+          search={search}
+          setSearch={setSearch}
+          itemsToRender={itemsToRender}
+          cartItems={cartItems}
+          favoriteItems={favoriteItems}
+          handleCartAdd={handleCartAdd}
+          handleCartRemove={handleCartRemove}
+          handleFavoriteAdd={handleFavoriteAdd}
+          handleFavoriteRemove={handleFavoriteRemove}
+        />
       </main>
     </div>
   )
