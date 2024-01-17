@@ -3,6 +3,8 @@ import axios from 'axios'
 import Header from './components/Header'
 import CartDrawer from './components/CartDrawer'
 import Home from './pages/Home'
+import Favorites from './pages/Favorites'
+import { Route, Routes } from 'react-router-dom'
 
 function App() {
   const [items, setItems] = useState([])
@@ -60,23 +62,30 @@ function App() {
     }
   }
 
-
   return (
     <div className="wrapper clear">
       <CartDrawer isCartOpen={isCartOpen} onClose={handleCartClose} items={cartItems} onItemRemove={handleCartRemove} />
       <Header onCartOpen={handleCartOpen} />
       <main className="content p-40">
-        <Home
-          search={search}
-          setSearch={setSearch}
-          items={items}
-          cartItems={cartItems}
-          favoriteItems={favoriteItems}
-          handleCartAdd={handleCartAdd}
-          handleCartRemove={handleCartRemove}
-          handleFavoriteAdd={handleFavoriteAdd}
-          handleFavoriteRemove={handleFavoriteRemove}
-        />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Home
+                search={search}
+                setSearch={setSearch}
+                items={items}
+                cartItems={cartItems}
+                favoriteItems={favoriteItems}
+                handleCartAdd={handleCartAdd}
+                handleCartRemove={handleCartRemove}
+                handleFavoriteAdd={handleFavoriteAdd}
+                handleFavoriteRemove={handleFavoriteRemove}
+              />
+            }
+          />
+          <Route path="/favorites" element={<Favorites />} />
+        </Routes>
       </main>
     </div>
   )
