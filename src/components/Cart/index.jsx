@@ -4,7 +4,7 @@ import CartItems from './CartItems'
 import boxEmptySrc from '../../assets/imgs/box-empty.png'
 import styles from './Cart.module.scss'
 
-const Cart = ({ items, onItemRemove }) => {
+const Cart = ({ items, onItemRemove, onClose }) => {
   return (
     <div className={`${styles.cart} d-flex flex-column`}>
       {items.length === 0 ? (
@@ -12,7 +12,7 @@ const Cart = ({ items, onItemRemove }) => {
           <img src={boxEmptySrc} alt="Empty box" />
           <h2>Корзина пустая</h2>
           <p className="opacity-6">Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ.</p>
-          <button className="button-color" type="button">
+          <button className="button-color" type="button" onClick={onClose}>
             <ArrowLeftIcon className="button-color__icon button-color__icon--left" width={16} height={14} />
             <span>Вернуться назад</span>
           </button>

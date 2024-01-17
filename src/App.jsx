@@ -26,6 +26,7 @@ function App() {
   }
   const handleCartRemove = (item) => {
     setCartItems((prevState) => prevState.filter((currentItem) => currentItem._id !== item._id))
+    axios.delete(`https://65a61ad374cf4207b4ef4757.mockapi.io/cart/${item._id}`)
   }
   const searchValue = search.trim()
   const title = !!searchValue ? `Поиск по запросу: "${search.trim()}"` : 'Все кроссовки'
