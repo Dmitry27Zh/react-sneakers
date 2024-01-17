@@ -59,9 +59,7 @@ function App() {
       })
     }
   }
-  const searchValue = search.trim()
-  const title = !!searchValue ? `Поиск по запросу: "${search.trim()}"` : 'Все кроссовки'
-  const itemsToRender = items.filter((item) => item.title.trim().toLowerCase().includes(searchValue.toLowerCase()))
+
 
   return (
     <div className="wrapper clear">
@@ -69,10 +67,9 @@ function App() {
       <Header onCartOpen={handleCartOpen} />
       <main className="content p-40">
         <Home
-          title={title}
           search={search}
           setSearch={setSearch}
-          itemsToRender={itemsToRender}
+          items={items}
           cartItems={cartItems}
           favoriteItems={favoriteItems}
           handleCartAdd={handleCartAdd}

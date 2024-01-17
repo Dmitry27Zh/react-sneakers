@@ -2,10 +2,9 @@ import { ReactComponent as SearchIcon } from '../../assets/icons/search.svg'
 import Card from '../../components/Card'
 
 const Home = ({
-  title,
+  items,
   search,
   setSearch,
-  itemsToRender,
   cartItems,
   favoriteItems,
   handleCartAdd,
@@ -13,6 +12,10 @@ const Home = ({
   handleFavoriteAdd,
   handleFavoriteRemove,
 }) => {
+  const searchValue = search.trim()
+  const title = !!searchValue ? `Поиск по запросу: "${search.trim()}"` : 'Все кроссовки'
+  const itemsToRender = items.filter((item) => item.title.trim().toLowerCase().includes(searchValue.toLowerCase()))
+
   return (
     <>
       <div className="d-flex justify-between align-center mb-40">
