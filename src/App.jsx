@@ -21,6 +21,7 @@ function App() {
   }
   const handleCartAdd = (item) => {
     setCartItems((prevState) => [...prevState, item])
+    axios.post('https://65a61ad374cf4207b4ef4757.mockapi.io/cart', item)
   }
   const handleCartRemove = (item) => {
     setCartItems((prevState) => prevState.filter((currentItem) => currentItem._id !== item._id))
