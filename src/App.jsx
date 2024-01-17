@@ -1,8 +1,9 @@
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 import { ReactComponent as SearchIcon } from '../src/assets/icons/search.svg'
 import Card from './components/Card'
 import Header from './components/Header'
 import CartDrawer from './components/CartDrawer'
-import { useEffect, useState } from 'react'
 
 function App() {
   const [items, setItems] = useState([])
@@ -10,9 +11,7 @@ function App() {
   const [isCartOpen, setIsCartOpen] = useState(false)
   const [search, setSearch] = useState('')
   useEffect(() => {
-    fetch('https://65a61ad374cf4207b4ef4757.mockapi.io/items')
-      .then((res) => res.json())
-      .then((data) => setItems(data))
+    axios.get('https://65a61ad374cf4207b4ef4757.mockapi.io/items').then((res) => setItems(res.data))
   }, [])
   const handleCartOpen = () => {
     setIsCartOpen(true)
