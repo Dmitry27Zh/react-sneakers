@@ -1,10 +1,12 @@
-import { useEffect, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import Header from './components/Header'
 import CartDrawer from './components/CartDrawer'
 import Home from './pages/Home'
 import Favorites from './pages/Favorites'
 import { Route, Routes } from 'react-router-dom'
+
+const AppContext = createContext({})
 
 function App() {
   const [items, setItems] = useState([])
