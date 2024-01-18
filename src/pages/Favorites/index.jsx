@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Items from '../../components/Items'
 
 const Favorites = ({
@@ -9,6 +10,8 @@ const Favorites = ({
   handleFavoriteAdd,
   handleFavoriteRemove,
 }) => {
+  const [itemsToRender] = useState(items)
+
   return (
     <>
       <div className="d-flex justify-between align-center mb-40">
@@ -16,7 +19,7 @@ const Favorites = ({
       </div>
       <div className="products d-flex flex-wrap">
         <Items
-          items={items}
+          items={itemsToRender}
           cartItems={cartItems}
           favoriteItems={favoriteItems}
           handleCartAdd={handleCartAdd}
