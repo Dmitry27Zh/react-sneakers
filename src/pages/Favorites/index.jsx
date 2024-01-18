@@ -9,6 +9,7 @@ const Favorites = ({
   handleCartRemove,
   handleFavoriteAdd,
   handleFavoriteRemove,
+  isLoading,
 }) => {
   const [itemsToRender] = useState(items)
 
@@ -26,6 +27,7 @@ const Favorites = ({
           handleCartRemove={handleCartRemove}
           handleFavoriteAdd={handleFavoriteAdd}
           handleFavoriteRemove={handleFavoriteRemove}
+          isLoading={isLoading}
         />
       </div>
     </>

@@ -78,45 +78,53 @@ function App() {
   }
 
   return (
-    <div className="wrapper clear">
-      <CartDrawer isCartOpen={isCartOpen} onClose={handleCartClose} items={cartItems} onItemRemove={handleCartRemove} />
-      <Header onCartOpen={handleCartOpen} />
-      <main className="content p-40">
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <Home
-                search={search}
-                setSearch={setSearch}
-                items={items}
-                cartItems={cartItems}
-                favoriteItems={favoriteItems}
-                handleCartAdd={handleCartAdd}
-                handleCartRemove={handleCartRemove}
-                handleFavoriteAdd={handleFavoriteAdd}
-                handleFavoriteRemove={handleFavoriteRemove}
-                isLoading={isLoading}
-              />
-            }
-          />
-          <Route
-            path="/favorites"
-            element={
-              <Favorites
-                items={favoriteItems}
-                cartItems={cartItems}
-                favoriteItems={favoriteItems}
-                handleCartAdd={handleCartAdd}
-                handleCartRemove={handleCartRemove}
-                handleFavoriteAdd={handleFavoriteAdd}
-                handleFavoriteRemove={handleFavoriteRemove}
-              />
-            }
-          />
-        </Routes>
-      </main>
-    </div>
+    <AppContext.Provider value={{ items, cartItems, favoriteItems }}>
+      <div className="wrapper clear">
+        <CartDrawer
+          isCartOpen={isCartOpen}
+          onClose={handleCartClose}
+          items={cartItems}
+          onItemRemove={handleCartRemove}
+        />
+        <Header onCartOpen={handleCartOpen} />
+        <main className="content p-40">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Home
+                  search={search}
+                  setSearch={setSearch}
+                  items={items}
+                  cartItems={cartItems}
+                  favoriteItems={favoriteItems}
+                  handleCartAdd={handleCartAdd}
+                  handleCartRemove={handleCartRemove}
+                  handleFavoriteAdd={handleFavoriteAdd}
+                  handleFavoriteRemove={handleFavoriteRemove}
+                  isLoading={isLoading}
+                />
+              }
+            />
+            <Route
+              path="/favorites"
+              element={
+                <Favorites
+                  items={favoriteItems}
+                  cartItems={cartItems}
+                  favoriteItems={favoriteItems}
+                  handleCartAdd={handleCartAdd}
+                  handleCartRemove={handleCartRemove}
+                  handleFavoriteAdd={handleFavoriteAdd}
+                  handleFavoriteRemove={handleFavoriteRemove}
+                  isLoading={isLoading}
+                />
+              }
+            />
+          </Routes>
+        </main>
+      </div>
+    </AppContext.Provider>
   )
 }
 
