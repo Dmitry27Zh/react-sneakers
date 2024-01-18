@@ -13,6 +13,10 @@
     transform: translateY(-5px);
   }
 
+  &__img {
+    align-self: center;
+  }
+
   &__title {
     font-weight: 400;
     font-size: 14px;

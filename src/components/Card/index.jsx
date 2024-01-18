@@ -20,10 +20,10 @@ const Card = ({
   onCartRemove,
   onFavoriteAdd,
   onFavoriteRemove,
-  isLoading = true,
+  isLoading,
 }) => {
   return (
-    <article className={`${styles.card} p-20`}>
+    <article className={`${styles.card} d-flex flex-column p-20`}>
       {isLoading ? (
         <ContentLoader
           className="w100p"
@@ -60,7 +60,7 @@ const Card = ({
               <HeartInactiveIcon className="button__icon" width={32} height={32} aria-hidden={true} />
             </button>
           )}
-          <img width={113} height={112} src={imgSrc} alt="Product" />
+          <img className={styles['card__img']} width={113} height={112} src={imgSrc} alt="Product" />
           <h3 className={styles['card__title']}>{title}</h3>
           <footer className={`${styles['card__footer']} d-flex justify-between align-center`}>
             <div className={`${styles['card__price']} d-flex flex-column`}>
