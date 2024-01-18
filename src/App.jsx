@@ -17,9 +17,9 @@ function App() {
       const responseItems = await axios.get('https://65a61ad374cf4207b4ef4757.mockapi.io/items')
       const responseCart = await axios.get('https://65a61ad374cf4207b4ef4757.mockapi.io/cart')
       const responseFavorites = await axios.get('https://65a7e40e94c2c5762da7d713.mockapi.io/favorites')
-      setItems(responseItems.data)
       setCartItems(responseCart.data)
       setFavoriteItems(responseFavorites.data)
+      setItems(responseItems.data)
     }
     fetchData()
   }, [])
