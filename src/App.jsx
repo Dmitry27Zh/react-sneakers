@@ -13,9 +13,15 @@ function App() {
   const [isCartOpen, setIsCartOpen] = useState(false)
   const [search, setSearch] = useState('')
   useEffect(() => {
-    axios.get('https://65a61ad374cf4207b4ef4757.mockapi.io/items').then((res) => setItems(res.data))
-    axios.get('https://65a61ad374cf4207b4ef4757.mockapi.io/cart').then((res) => setCartItems(res.data))
-    axios.get('https://65a7e40e94c2c5762da7d713.mockapi.io/favorites').then((res) => setFavoriteItems(res.data))
+    async function fetchData() {
+      const responseItems = await axios.get('https://65a61ad374cf4207b4ef4757.mockapi.io/items')
+      const responseCart = await axios.get('https://65a61ad374cf4207b4ef4757.mockapi.io/cart')
+      const responseFavorites = await axios.get('https://65a7e40e94c2c5762da7d713.mockapi.io/favorites')
+      setItems(responseItems.data)
+      setCartItems(responseCart.data)
+      setFavoriteItems(responseFavorites.data)
+    }
+    fetchData()
   }, [])
   const handleCartOpen = () => {
     setIsCartOpen(true)
