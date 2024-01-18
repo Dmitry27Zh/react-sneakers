@@ -11,6 +11,7 @@ const Home = ({
   handleCartRemove,
   handleFavoriteAdd,
   handleFavoriteRemove,
+  isLoading,
 }) => {
   const searchValue = search.trim()
   const title = !!searchValue ? `Поиск по запросу: "${search.trim()}"` : 'Все кроссовки'
@@ -40,6 +41,7 @@ const Home = ({
           handleCartRemove={handleCartRemove}
           handleFavoriteAdd={handleFavoriteAdd}
           handleFavoriteRemove={handleFavoriteRemove}
+          isLoading={isLoading}
         />
       </div>
     </>

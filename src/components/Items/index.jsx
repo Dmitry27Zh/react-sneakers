@@ -8,10 +8,13 @@ const Items = ({
   handleCartRemove,
   handleFavoriteAdd,
   handleFavoriteRemove,
+  isLoading,
 }) => {
-  return items.map((item) => {
+  const itemsToRender = isLoading ? Array.from({ length: 10 }, (_, index) => ({ _id: index })) : items
+
+  return itemsToRender.map((item) => {
     const isCart = cartItems.some((cartItem) => cartItem._id === item._id)
-    const isFavorite = favoriteItems?.some((favoriteItem) => favoriteItem._id === item._id)
+    const isFavorite = favoriteItems.some((favoriteItem) => favoriteItem._id === item._id)
 
     return (
       <Card
@@ -23,6 +26,7 @@ const Items = ({
         onCartRemove={() => handleCartRemove(item)}
         onFavoriteAdd={() => handleFavoriteAdd(item)}
         onFavoriteRemove={() => handleFavoriteRemove(item)}
+        isLoading={isLoading}
       />
     )
   })

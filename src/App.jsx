@@ -12,6 +12,7 @@ function App() {
   const [favoriteItems, setFavoriteItems] = useState([])
   const [isCartOpen, setIsCartOpen] = useState(false)
   const [search, setSearch] = useState('')
+  const [isLoading, setIsLoading] = useState(true)
   useEffect(() => {
     async function fetchData() {
       try {
@@ -23,6 +24,8 @@ function App() {
         setItems(responseItems.data)
       } catch (e) {
         console.error(e)
+      } finally {
+        setIsLoading(false)
       }
     }
     fetchData()
@@ -91,6 +94,7 @@ function App() {
                 handleCartRemove={handleCartRemove}
                 handleFavoriteAdd={handleFavoriteAdd}
                 handleFavoriteRemove={handleFavoriteRemove}
+                isLoading={isLoading}
               />
             }
           />
