@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react'
 import Items from '../../components/Items'
-import { AppContext } from '../../App'
+import AppContext from '../../contexts/AppContext'
 
 const Favorites = ({
   cartItems,
