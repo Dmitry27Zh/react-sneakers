@@ -90,7 +90,20 @@ function App() {
               />
             }
           />
-          <Route path="/favorites" element={<Favorites />} />
+          <Route
+            path="/favorites"
+            element={
+              <Favorites
+                items={favoriteItems}
+                cartItems={cartItems}
+                favoriteItems={favoriteItems}
+                handleCartAdd={handleCartAdd}
+                handleCartRemove={handleCartRemove}
+                handleFavoriteAdd={handleFavoriteAdd}
+                handleFavoriteRemove={handleFavoriteRemove}
+              />
+            }
+          />
         </Routes>
       </main>
     </div>
