@@ -1,17 +1,17 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import Items from '../../components/Items'
+import { AppContext } from '../../App'
 
 const Favorites = ({
-  items,
   cartItems,
-  favoriteItems,
   handleCartAdd,
   handleCartRemove,
   handleFavoriteAdd,
   handleFavoriteRemove,
   isLoading,
 }) => {
-  const [itemsToRender] = useState(items)
+  const { favoriteItems } = useContext(AppContext)
+  const [itemsToRender] = useState(favoriteItems)
 
   return (
     <>

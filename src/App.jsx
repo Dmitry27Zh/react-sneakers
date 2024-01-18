@@ -6,7 +6,7 @@ import Home from './pages/Home'
 import Favorites from './pages/Favorites'
 import { Route, Routes } from 'react-router-dom'
 
-const AppContext = createContext({})
+export const AppContext = createContext({})
 
 function App() {
   const [items, setItems] = useState([])
@@ -110,9 +110,7 @@ function App() {
               path="/favorites"
               element={
                 <Favorites
-                  items={favoriteItems}
                   cartItems={cartItems}
-                  favoriteItems={favoriteItems}
                   handleCartAdd={handleCartAdd}
                   handleCartRemove={handleCartRemove}
                   handleFavoriteAdd={handleFavoriteAdd}
