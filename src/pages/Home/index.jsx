@@ -1,5 +1,5 @@
 import { ReactComponent as SearchIcon } from '../../assets/icons/search.svg'
-import Card from '../../components/Card'
+import Items from '../../components/Items'
 
 const Home = ({
   items,
@@ -32,23 +32,15 @@ const Home = ({
         </div>
       </div>
       <div className="products d-flex flex-wrap">
-        {itemsToRender.map((item) => {
-          const isCart = cartItems.some((cartItem) => cartItem._id === item._id)
-          const isFavorite = favoriteItems?.some((favoriteItem) => favoriteItem._id === item._id)
-
-          return (
-            <Card
-              key={item._id}
-              {...item}
-              isFavorite={isFavorite}
-              isAdded={isCart}
-              onCartAdd={() => handleCartAdd(item)}
-              onCartRemove={() => handleCartRemove(item)}
-              onFavoriteAdd={() => handleFavoriteAdd(item)}
-              onFavoriteRemove={() => handleFavoriteRemove(item)}
-            />
-          )
-        })}
+        <Items
+          cartItems={cartItems}
+          favoriteItems={favoriteItems}
+          items={itemsToRender}
+          handleCartAdd={handleCartAdd}
+          handleCartRemove={handleCartRemove}
+          handleFavoriteAdd={handleFavoriteAdd}
+          handleFavoriteRemove={handleFavoriteRemove}
+        />
       </div>
     </>
   )
