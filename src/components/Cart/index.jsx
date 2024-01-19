@@ -6,6 +6,7 @@ import styles from './Cart.module.scss'
 import AppContext from '../../contexts/AppContext'
 import CartEmpty from './CartEmpty'
 import CartOrder from './CartOrder'
+import { removeCartItems } from './removeCartItems'
 
 const Cart = ({ onItemRemove }) => {
   const { cartItems, setCartItems, handleCartClose } = useContext(AppContext)
@@ -20,6 +21,7 @@ const Cart = ({ onItemRemove }) => {
       const { data } = await axios.post('https://65a7e40e94c2c5762da7d713.mockapi.io/orders', {
         items: cartItems,
       })
+      await removeCartItems(cartItems)
       setOrderId(data.id)
       setCartItems([])
     } catch (e) {
