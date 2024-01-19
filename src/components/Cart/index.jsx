@@ -7,9 +7,11 @@ import AppContext from '../../contexts/AppContext'
 import CartEmpty from './CartEmpty'
 import CartOrder from './CartOrder'
 import { removeCartItems } from './removeCartItems'
+import { useCart } from '../../hooks/useCart'
 
 const Cart = ({ onItemRemove }) => {
   const { cartItems, setCartItems, handleCartClose } = useContext(AppContext)
+  const { priceTotal, priceFee } = useCart()
   const [orderId, setOrderId] = useState()
   const [isOrderLoading, setIsOrderLoading] = useState(false)
   const isOrderComplete = orderId != null
@@ -52,11 +54,11 @@ const Cart = ({ onItemRemove }) => {
             <ul className={`${styles['cart__info']} d-flex flex-column mb-25`}>
               <li className={`${styles['cart__info-item']} d-flex`}>
                 <span>Итого: </span>
-                <b>21 498 руб. </b>
+                <b>{priceTotal}</b>
               </li>
               <li className={`${styles['cart__info-item']} d-flex`}>
                 <span>Налог 5%: </span>
-                <b>1074 руб. </b>
+                <b>{priceFee}</b>
               </li>
             </ul>
             <button className="button-color" type="button" onClick={onOrder} disabled={isOrderLoading}>

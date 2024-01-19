@@ -4,11 +4,7 @@ import { ReactComponent as TickIcon } from '../../assets/icons/tick.svg'
 import { ReactComponent as HeartActiveIcon } from '../../assets/icons/heart-active.svg'
 import { ReactComponent as HeartInactiveIcon } from '../../assets/icons/heart-inactive.svg'
 import styles from './Card.module.scss'
-
-const currency = new Intl.NumberFormat('ru-RU', {
-  style: 'currency',
-  currency: 'RUB',
-})
+import { formatCurrency } from '../../utils'
 
 const Card = ({
   title,
@@ -65,7 +61,7 @@ const Card = ({
           <footer className={`${styles['card__footer']} d-flex justify-between align-center`}>
             <div className={`${styles['card__price']} d-flex flex-column`}>
               <span>Цена:</span>
-              <b>{currency.format(price)}</b>
+              <b>{formatCurrency(price)}</b>
             </div>
             {isAdded ? (
               <button className="button" aria-label="Remove" onClick={onCartRemove}>
