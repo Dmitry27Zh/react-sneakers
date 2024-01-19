@@ -17,7 +17,9 @@ const Cart = ({ onItemRemove }) => {
   const onOrder = async () => {
     try {
       setIsOrderLoading(true)
-      const { data } = await axios.post('https://65a7e40e94c2c5762da7d713.mockapi.io/orders', cartItems)
+      const { data } = await axios.post('https://65a7e40e94c2c5762da7d713.mockapi.io/orders', {
+        items: cartItems,
+      })
       setOrderId(data.id)
       setCartItems([])
     } catch (e) {
