@@ -1,22 +1,19 @@
 import { ReactComponent as ArrowRightIcon } from '../../assets/icons/arrow-right.svg'
-import { ReactComponent as ArrowLeftIcon } from '../../assets/icons/arrow-left.svg'
 import CartItems from './CartItems'
 import boxEmptySrc from '../../assets/imgs/box-empty.png'
 import styles from './Cart.module.scss'
+import Info from '../Info'
 
 const Cart = ({ items, onItemRemove, onClose }) => {
   return (
     <div className={`${styles.cart} d-flex flex-column`}>
       {items.length === 0 ? (
-        <div className={`${styles['cart__empty']} d-flex flex-column justify-center align-center`}>
-          <img src={boxEmptySrc} alt="Empty box" />
-          <h2>Корзина пустая</h2>
-          <p className="opacity-6">Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ.</p>
-          <button className="button-color" type="button" onClick={onClose}>
-            <ArrowLeftIcon className="button-color__icon button-color__icon--left" width={16} height={14} />
-            <span>Вернуться назад</span>
-          </button>
-        </div>
+        <Info
+          imgSrc={boxEmptySrc}
+          title="Корзина пустая"
+          text="Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ."
+          onClose={onClose}
+        />
       ) : (
         <>
           <CartItems items={items} onItemRemove={onItemRemove} />
