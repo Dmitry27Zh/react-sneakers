@@ -77,14 +77,11 @@ function App() {
   }
 
   return (
-    <AppContext.Provider value={{ items, cartItems, favoriteItems }}>
+    <AppContext.Provider
+      value={{ items, cartItems, setCartItems, favoriteItems, isCartOpen, handleCartOpen, handleCartClose }}
+    >
       <div className="wrapper clear">
-        <CartDrawer
-          isCartOpen={isCartOpen}
-          onClose={handleCartClose}
-          items={cartItems}
-          onItemRemove={handleCartRemove}
-        />
+        <CartDrawer onClose={handleCartClose} items={cartItems} onItemRemove={handleCartRemove} />
         <Header onCartOpen={handleCartOpen} />
         <main className="content p-40">
           <Routes>

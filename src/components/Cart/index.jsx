@@ -1,22 +1,45 @@
+import { useContext, useState } from 'react'
+import axios from 'axios'
 import { ReactComponent as ArrowRightIcon } from '../../assets/icons/arrow-right.svg'
 import CartItems from './CartItems'
-import boxEmptySrc from '../../assets/imgs/box-empty.png'
 import styles from './Cart.module.scss'
-import Info from '../Info'
+import AppContext from '../../contexts/AppContext'
+import CartEmpty from './CartEmpty'
+import CartOrder from './CartOrder'
 
-const Cart = ({ items, onItemRemove, onClose }) => {
+const Cart = ({ onItemRemove }) => {
+  const { cartItems, setCartItems, handleCartClose } = useContext(AppContext)
+  const [orderId, setOrderId] = useState()
+  const isOrderComplete = orderId != null
+  const isEmpty = cartItems.length === 0
+  const isInfo = isOrderComplete || isEmpty
+  const onOrder = async () => {
+    try {
+      const { data } = await axios.post('https://65a7e40e94c2c5762da7d713.mockapi.io/orders', cartItems)
+      setOrderId(data.id)
+      setCartItems([])
+    } catch (e) {
+      alert('Не удалось создать заказ')
+    }
+  }
+  const handleClose = () => {
+    setOrderId(null)
+    handleCartClose()
+  }
+  const renderInfo = () => {
+    if (isOrderComplete) {
+      return <CartOrder id={orderId} onClose={handleClose} />
+    } else if (isEmpty) {
+      return <CartEmpty onClose={handleClose} />
+    }
+  }
   return (
     <div className={`${styles.cart} d-flex flex-column`}>
-      {items.length === 0 ? (
-        <Info
-          imgSrc={boxEmptySrc}
-          title="Корзина пустая"
-          text="Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ."
-          onClose={onClose}
-        />
+      {isInfo ? (
+        renderInfo()
       ) : (
         <>
-          <CartItems items={items} onItemRemove={onItemRemove} />
+          <CartItems items={cartItems} onItemRemove={onItemRemove} />
           <footer className={`${styles['cart__footer']} d-flex flex-column`}>
             <ul className={`${styles['cart__info']} d-flex flex-column mb-25`}>
               <li className={`${styles['cart__info-item']} d-flex`}>
@@ -28,7 +51,7 @@ const Cart = ({ items, onItemRemove, onClose }) => {
                 <b>1074 руб. </b>
               </li>
             </ul>
-            <button className="button-color" type="button">
+            <button className="button-color" type="button" onClick={onOrder}>
               <span>Оформить заказ</span>
               <ArrowRightIcon className="button-color__icon" width={16} height={14} />
             </button>
