@@ -10,16 +10,20 @@ import CartOrder from './CartOrder'
 const Cart = ({ onItemRemove }) => {
   const { cartItems, setCartItems, handleCartClose } = useContext(AppContext)
   const [orderId, setOrderId] = useState()
+  const [isOrderLoading, setIsOrderLoading] = useState(false)
   const isOrderComplete = orderId != null
   const isEmpty = cartItems.length === 0
   const isInfo = isOrderComplete || isEmpty
   const onOrder = async () => {
     try {
+      setIsOrderLoading(true)
       const { data } = await axios.post('https://65a7e40e94c2c5762da7d713.mockapi.io/orders', cartItems)
       setOrderId(data.id)
       setCartItems([])
     } catch (e) {
       alert('Не удалось создать заказ')
+    } finally {
+      setIsOrderLoading(false)
     }
   }
   const handleClose = () => {
@@ -51,7 +55,7 @@ const Cart = ({ onItemRemove }) => {
                 <b>1074 руб. </b>
               </li>
             </ul>
-            <button className="button-color" type="button" onClick={onOrder}>
+            <button className="button-color" type="button" onClick={onOrder} disabled={isOrderLoading}>
               <span>Оформить заказ</span>
               <ArrowRightIcon className="button-color__icon" width={16} height={14} />
             </button>
