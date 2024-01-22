@@ -1,10 +1,8 @@
 import ContentLoader from 'react-content-loader'
-import { ReactComponent as PlusIcon } from '../../assets/icons/plus.svg'
-import { ReactComponent as TickIcon } from '../../assets/icons/tick.svg'
-import { ReactComponent as HeartActiveIcon } from '../../assets/icons/heart-active.svg'
-import { ReactComponent as HeartInactiveIcon } from '../../assets/icons/heart-inactive.svg'
 import styles from './Card.module.scss'
 import { formatCurrency } from '../../utils'
+import CardFavoriteButton from './CardFavoriteButton'
+import CardCartButton from './CardCartButton'
 
 const Card = ({
   title,
@@ -17,6 +15,7 @@ const Card = ({
   onFavoriteAdd,
   onFavoriteRemove,
   isLoading,
+  isInteractive = true,
 }) => {
   return (
     <article className={`${styles.card} d-flex flex-column p-20`}>
@@ -39,22 +38,12 @@ const Card = ({
         </ContentLoader>
       ) : (
         <>
-          {isFavorite ? (
-            <button
-              className={`button ${styles['card__favorite-btn']}`}
-              aria-label="Not favorite"
-              onClick={onFavoriteRemove}
-            >
-              <HeartActiveIcon className="button__icon" width={32} height={32} aria-hidden={true} />
-            </button>
-          ) : (
-            <button
-              className={`button ${styles['card__favorite-btn']}`}
-              aria-label="To favorite"
-              onClick={onFavoriteAdd}
-            >
-              <HeartInactiveIcon className="button__icon" width={32} height={32} aria-hidden={true} />
-            </button>
+          {isInteractive && (
+            <CardFavoriteButton
+              isFavorite={isFavorite}
+              onFavoriteAdd={onFavoriteAdd}
+              onFavoriteRemove={onFavoriteRemove}
+            />
           )}
           <img className={styles['card__img']} width={113} height={112} src={imgSrc} alt="Product" />
           <h3 className={styles['card__title']}>{title}</h3>
@@ -63,15 +52,7 @@ const Card = ({
               <span>Цена:</span>
               <b>{formatCurrency(price)}</b>
             </div>
-            {isAdded ? (
-              <button className="button" aria-label="Remove" onClick={onCartRemove}>
-                <TickIcon className="button__icon" width={32} height={32} aria-hidden={true} />
-              </button>
-            ) : (
-              <button className="button" aria-label="Add" onClick={onCartAdd}>
-                <PlusIcon className="button__icon" width={32} height={32} aria-hidden={true} />
-              </button>
-            )}
+            {isInteractive && <CardCartButton isAdded={isAdded} onCartAdd={onCartAdd} onCartRemove={onCartRemove} />}
           </footer>
         </>
       )}
