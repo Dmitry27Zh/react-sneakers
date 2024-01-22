@@ -32,18 +32,16 @@ const Home = ({
           />
         </div>
       </div>
-      <div className="products d-flex flex-wrap">
-        <Items
-          cartItems={cartItems}
-          favoriteItems={favoriteItems}
-          items={itemsToRender}
-          handleCartAdd={handleCartAdd}
-          handleCartRemove={handleCartRemove}
-          handleFavoriteAdd={handleFavoriteAdd}
-          handleFavoriteRemove={handleFavoriteRemove}
-          isLoading={isLoading}
-        />
-      </div>
+      <Items
+        cartItems={cartItems}
+        favoriteItems={favoriteItems}
+        items={itemsToRender}
+        handleCartAdd={handleCartAdd}
+        handleCartRemove={handleCartRemove}
+        handleFavoriteAdd={handleFavoriteAdd}
+        handleFavoriteRemove={handleFavoriteRemove}
+        isLoading={isLoading}
+      />
     </>
   )
 }
