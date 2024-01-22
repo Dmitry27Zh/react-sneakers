@@ -6,6 +6,7 @@ import CartDrawer from './components/CartDrawer'
 import Home from './pages/Home'
 import Favorites from './pages/Favorites'
 import AppContext from './contexts/AppContext'
+import Orders from './pages/Orders'
 
 function App() {
   const [items, setItems] = useState([])
@@ -115,6 +116,7 @@ function App() {
                 />
               }
             />
+            <Route path="/orders" element={<Orders />} />
           </Routes>
         </main>
       </div>

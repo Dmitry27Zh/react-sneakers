@@ -23,8 +23,10 @@ const Navigation = ({ onCartOpen }) => {
         </Link>
       </li>
       <li className={`${styles['navigation-item']} d-flex align-center`}>
-        <ProfileIcon className={styles['navigation-item__icon']} width={18} height={18} />
-        <span>Профиль</span>
+        <Link className={`${styles['navigation-item']} d-flex align-center`} to="/orders">
+          <ProfileIcon className={styles['navigation-item__icon']} width={18} height={18} />
+          <span>Заказы</span>
+        </Link>
       </li>
     </ul>
   )
