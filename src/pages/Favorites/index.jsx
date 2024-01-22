@@ -18,18 +18,16 @@ const Favorites = ({
       <div className="d-flex justify-between align-center mb-40">
         <h1>Мои покупки</h1>
       </div>
-      <div className="products d-flex flex-wrap">
-        <Items
-          items={itemsToRender}
-          cartItems={cartItems}
-          favoriteItems={favoriteItems}
-          handleCartAdd={handleCartAdd}
-          handleCartRemove={handleCartRemove}
-          handleFavoriteAdd={handleFavoriteAdd}
-          handleFavoriteRemove={handleFavoriteRemove}
-          isLoading={isLoading}
-        />
-      </div>
+      <Items
+        items={itemsToRender}
+        cartItems={cartItems}
+        favoriteItems={favoriteItems}
+        handleCartAdd={handleCartAdd}
+        handleCartRemove={handleCartRemove}
+        handleFavoriteAdd={handleFavoriteAdd}
+        handleFavoriteRemove={handleFavoriteRemove}
+        isLoading={isLoading}
+      />
     </>
   )
 }
